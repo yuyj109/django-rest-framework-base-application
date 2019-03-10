@@ -5,7 +5,7 @@ from django.views.generic.base import RedirectView
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('api/', include([
-        path('users/', include('users.urls', namespace='users'))
+        path('users/', include('myapps.users.urls', namespace='users'))
     ])),
     re_path(r'^', RedirectView.as_view(url=reverse_lazy('api/users/'), permanent=False)),
 ]
